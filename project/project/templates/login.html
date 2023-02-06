@@ -1,0 +1,37 @@
+{% extends 'master.html' %}
+
+{% block starts %}
+{% endblock %}
+{% block three %}
+{% endblock %}
+{% block two %}
+{% endblock %}
+{% block card %}
+{% endblock %}
+{% block service %}
+{% endblock %}
+{% block connect %}
+{% endblock %}
+{% block jumbotron %}
+<form method="post" action="/login/" class="container mt-4 mb-3 bg-dark text-white p-4">
+{% csrf_token %}
+{{output}}
+    <h1 class="text-danger text-center mb-4">Login Page</h1>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" name="username" id="form2Example1" class="form-control" />
+      <label class="form-label" for="form2Example1">Username</label>
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" name="password" id="form2Example2" class="form-control" />
+      <label class="form-label" for="form2Example2">Password</label>
+    </div>
+  
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">login</button>
+  
+
+  </form>
+{% endblock %}

@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* this is a code to fix mobile right white-space problem */
+
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+nav .navbar-brand{
+    margin-left: 50px;
+}
+.carousel-inner .carousel-item img{
+    display: block;
+    width: 100%;
+    height: 580px;
+   
+}
+
+.btn-css{
+    background-color: blueviolet !important;
+    color: #fff;
+}
+.btn-css:hover{
+    background-color: rgb(62, 21, 100) !important;
+    color: #fff;
+}
+
+.horizontal{
+    background-color: #fff;
+}
+
+.facebook{
+    color: #fff;
+    background-color: blue;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+.twitter{
+    color: #fff;
+    background-color: blueviolet;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+.instagram{
+    color: rgba(136, 44, 136, 0.849);
+    background-color: rgba(83, 77, 80, 0.589);
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+.you{
+    color: rgb(221, 14, 14);
+    background-color: rgb(224, 242, 243);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 15px;
+}
+.google{
+    color: rgb(235, 18, 18);
+    background-color: rgb(214, 214, 230);
+    padding: 10px 20px;
+    border-radius: 15px;
+}

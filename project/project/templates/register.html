@@ -1,0 +1,85 @@
+{% extends 'login.html' %}
+
+{% block jumbotron %}
+
+<script>
+
+function checkUsername(username){
+ // document.getElementById('response').innerHTML = username;
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET","http://127.0.0.1:8000/checkUsername/?username="+username,true);
+  xhttp.send();
+
+  xhttp.onreadystatechange = function(){
+    if(xhttp.status=200 && xhttp.readyState==4){
+      var res = xhttp.responseText;
+      var ref=document.getElementById('response');
+      if(res==1){
+        ref.innerHTML = '*User already exists.....';
+        ref.style.color="red";
+      }
+      else{
+        ref.innerHTML = '*Username available...';
+        ref.style.color = 'green';
+      }
+    }
+  }
+}
+
+</script>
+
+
+<div class="container bg-dark text-white mt-3 ">
+  <h1 class="text-center py-2">Register Here!!</h1>
+<form method="post">
+  {% csrf_token %}
+  {{output}}
+  <table  >
+      <tr>
+        <td >Name </td>
+        <td><input type="text" class="ml-2 my-2 p-1" name="name" placeholder="Enter Your Name" id=""></td>
+      </tr>
+      <tr>
+        <td >Username </td>
+        <td><input onkeyup="checkUsername(this.value)" type="text" class="ml-2 my-2 p-1" name="username" placeholder="Enter Username" id="">
+        <span id="response"></span>
+        </td>
+      </tr>
+      <tr>
+        <td >Password </td>
+        <td><input type="password" class="ml-2 my-2 p-1" name="password" placeholder="Enter Password" id=""></td>
+      </tr>
+      <tr>
+        <td >Mobile Number </td>
+        <td><input type="tel" class="ml-2 my-2 p-1" name="mobile" placeholder="Enter Mobile Number" id=""></td>
+      </tr>
+      <tr>
+        <td >Address </td>
+        <td><textarea name="address" class="ml-2 my-2 p-1" id="" cols="25" rows="3" placeholder="Enter your address"></textarea></td>
+      </tr>
+      <tr>
+        <td >Select your city </td>
+        <td><select  class="ml-2 my-2 p-1" name="city" id="">
+          <option value="indore">Indore</option>
+          <option value="bengalore">Bengalore</option>
+          <option value="pune">Pune</option>
+          <option value="mumbai">Mumbai</option>
+        </select></td>
+      </tr>
+     <tr>
+      <td>Gender</td>
+      <td>
+        <input type="radio"  id="male" name="gender" value="male"> 
+        <label for="male" class="pr-4">male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">female</label>
+      </td>
+     </tr>
+     <tr >
+      <td><input class="ml-2 mt-3 mb-3 p-1" type="submit" name="register" value="Register"></td>
+     </tr>
+  </table>
+</form>
+</div>
+{% endblock %}
+

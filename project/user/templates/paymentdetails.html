@@ -1,0 +1,42 @@
+{% extends 'userhome.html' %}
+
+{% block starts %}
+<center>
+    <p>{{sunm}}</p>
+</center>
+{% endblock %}
+{% block three %}
+{% endblock %}
+{% block two %}
+{% endblock %}
+{% block card %}
+{% endblock %}
+{% block service %}
+{% endblock %}
+{% block connect %}
+{% endblock %}
+
+
+{% block jumbotron %}
+<center>
+    <h1 class="my-3">Funds Raised Information</h1>    
+</center>
+<div class="container">
+<table class="table  table-striped table-bordered">
+    <tr>
+        <th>Transaction Id</th>
+        <th>user ID</th>
+        <th>Amount</th>
+        <th>payment info</th>
+    </tr>
+    {% for row in paymentinfo %}
+    <tr>
+        <td>{{row.txnid}}</td>
+        <td>{{row.uid}}</td>
+        <td>{{row.price}}</td>
+        <td>{{row.info}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'adminhome.html' %}
+
+{% block jumbotron %}
+<div class="container bg-dark text-white mt-3 ">
+    <h1 class="text-center py-2">Edit Profile Here!!</h1>
+  <form method="post" action="/myadmin/epadmin/">
+    {% csrf_token %}
+    
+    <table  >
+        <tr>
+          <td >Name </td>
+          <td><input type="text" class="ml-2 my-2 p-1" name="name" placeholder="Enter Your Name" value="{{userDetails.name}}" id=""></td>
+        </tr>
+        <tr>
+          <td >Username </td>
+          <td><input type="text" class="ml-2 my-2 p-1" name="username" placeholder="Enter Username" value="{{userDetails.username}}" id=""></td>
+        </tr>
+        <tr>
+          <td >Mobile Number </td>
+          <td><input type="tel" class="ml-2 my-2 p-1" name="mobile" placeholder="Enter Mobile Number" value="{{userDetails.mobile}}" id=""></td>
+        </tr>
+        <tr>
+          <td >Address </td>
+          <td><textarea name="address" class="ml-2 my-2 p-1" id="" cols="25" rows="3" placeholder="Enter your address"> {{userDetails.address}}</textarea></td>
+        </tr>
+        <tr>
+          <td >Select your city </td>
+          <td><select  class="ml-2 my-2 p-1" name="city" id="">
+            <option>{{userDetails.city}}</option>
+            <option>Indore</option>
+            <option >Bengalore</option>
+            <option >Pune</option>
+            <option >Mumbai</option>
+          </select></td>
+        </tr>
+       <tr>
+        <td>Gender</td>
+        <td>
+          <input type="radio"  id="male" name="gender" value="male" {{m}}> 
+          <label for="male" class="pr-4">male</label>
+          <input type="radio" id="female" name="gender" value="female" {{f}}>
+          <label for="female">female</label>
+        </td>
+       </tr>
+       <tr >
+        <td><input class="ml-2 mt-3 mb-3 p-1" type="submit" name="register" value="Save"></td>
+       </tr>
+       <p class="text-success">{{output}}</p>
+    </table>
+  </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'master.html' %}
+
+{% block starts %}
+<center>
+    <p>{{sunm}}</p>
+</center>
+{% endblock %}
+{% block three %}
+{% endblock %}
+{% block two %}
+{% endblock %}
+{% block card %}
+{% endblock %}
+{% block service %}
+{% endblock %}
+{% block connect %}
+{% endblock %}
+{% block navigation %}
+
+<div class="collapse navbar-collapse me-4 ms-2 " id="mynavbar">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+            <a href="/myadmin/" class="nav-link">AdminHome</a>
+        </li>
+        <li class="nav-item">
+            <a href="/myadmin/manageusers/" class="nav-link">Manageusers</a>
+        </li>
+        <li class="nav-item dropdown bg-dark">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Product
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/myadmin/addcategory/">Add Category</a>
+              <a class="dropdown-item" href="/myadmin/addsubcategory/">Add Subcategory</a>
+              <a class="dropdown-item" href="/myadmin/addproduct/">Add Product</a>
+            </div>
+          </li>
+        <li class="nav-item dropdown bg-dark">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Settings
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/myadmin/cpadmin/">Change Password</a>
+              <a class="dropdown-item" href="/myadmin/epadmin/">Edit Profile</a>
+            </div>
+          </li>
+        
+        <li class="nav-item">
+            <a href="/login/" class="nav-link">logout</a>
+        </li>
+    </ul>
+</div>
+</nav>
+{% endblock %}
+
+
+{% block jumbotron %}
+    <center>
+        <h1>Welcome to admin panel</h1>
+        <h2>HeavenHomes.com</h2>
+    </center>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'master.html' %}
+
+{% block starts %}
+<center>
+    <p>{{sunm}}</p>
+</center>
+{% endblock %}
+
+{% block jumbotron %}
+    <center>
+        <h1>Welcome to User panel</h1>
+        <h2>HeavenHomes.com</h2>
+    </center>
+{% endblock %}
+{% block three %}
+{% endblock %}
+{% block two %}
+{% endblock %}
+{% block card %}
+{% endblock %}
+{% block service %}
+{% endblock %}
+{% block connect %}
+{% endblock %}
+{% block navigation %}
+<div class="collapse navbar-collapse me-4 ms-2 " id="mynavbar">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+            <a href="/user/" class="nav-link">userhome</a>
+        </li>
+        <li class="nav-item">
+            <a href="/user/funds/" class="nav-link">Funds</a>
+        </li>
+        <li class="nav-item">
+            <a href="/user/paymentdetails/" class="nav-link">PaymentDetails</a>
+        </li>
+        <li class="nav-item dropdown bg-dark">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Product_Options
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/user/showcategory/">View product</a>
+            </div>
+          </li>
+        <li class="nav-item dropdown bg-dark">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Settings
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/user/cpuser/">Change Password</a>
+              <a class="dropdown-item" href="/user/epuser/">Edit Profile</a>
+            </div>
+          </li>
+        <li class="nav-item">
+            <a href="/login/" class="nav-link">logout</a>
+        </li>
+    </ul>
+</div>
+</nav>
+{% endblock %}
+

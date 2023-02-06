@@ -1,0 +1,30 @@
+{% extends 'login.html' %}
+
+{% block jumbotron %}
+
+<script>
+    function ajaxResponse(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET","http://127.0.0.1:8000/ajaxResponse/",true);
+        xhttp.send();
+
+        xhttp.onreadystatechange= function(){
+            if(xhttp.status=200 && xhttp.readyState==4){
+            document.getElementById('response').innerHTML = xhttp.responseText;
+        }
+        }
+    }
+</script>
+
+<center>
+    <h1 class="my-2">Welcome to about page</h1>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem fugiat dignissimos delectus doloribus placeat impedit accusamus hic. Laboriosam quas recusandae molestiae fugit doloremque, quod, excepturi tenetur praesentium molestias facilis eligendi odit adipisci! Animi, officiis. Sint aliquam quas aliquid, iure hic, necessitatibus minima deserunt corporis ab nisi nemo adipisci assumenda saepe?</p>
+    </div>
+</center>
+<center>
+    <h2>Click Button to get ajax effect</h2>
+    <button onclick="ajaxResponse()">Click Here</button>
+    <h2 id="response"></h2>
+</center>
+{% endblock %}

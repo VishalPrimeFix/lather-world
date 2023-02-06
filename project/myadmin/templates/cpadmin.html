@@ -1,0 +1,31 @@
+{% extends 'adminhome.html' %}
+
+{% block jumbotron %}
+    <center>
+        <form method="post" action="/myadmin/cpuser/" class="container mt-4 mb-3 bg-dark text-white p-4">
+            {% csrf_token %}
+            {{output}}
+            <h1 class="text-danger mb-4">Change Password Here!!</h1>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="password" name="opass" id="form2Example1" placeholder="Enter Old password" class="form-control" />
+                  <label class="form-label" for="form2Example1">Old Password</label>
+                </div>
+              
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" name="npass" id="form2Example2" placeholder="Enter New Password" class="form-control" />
+                  <label class="form-label" for="form2Example2">New Password</label>
+                </div>
+              
+                <div class="form-outline mb-4">
+                  <input type="password" name="cnpass" id="form2Example2" placeholder="Enter Confirm New Password" class="form-control" />
+                  <label class="form-label" for="form2Example2">Confirm New Password</label>
+                </div>
+              {{msg}}
+                <!-- Submit button -->
+                <input type="submit" value='Change password' class="btn btn-primary smb-4">
+              </form>
+    </center>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'userhome.html' %}
+{% load static %}
+{% block jumbotron %}
+<h1 class="ml-5">subcategory >> {{catnm}}</h1>
+
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col-9 ">
+            <div class="row text-center p-4 my-2">
+        {% for row in sclist %}
+         <div class="col-lg-4 col-md-6 mb-4 ">
+            <a href="/user/showproduct/?catnm={{row.catnm}}&subcatnm={{row.subcatnm}}">
+            <img src='{{MEDIA_URL}}{{row.subcaticonnm}}' alt="" width="200" height="150" class='bg-danger'><br>
+            <b class="text-dark">{{row.subcatnm}}</b>
+        </a>
+        </div>
+        {% endfor %}
+            </div>
+        </div>
+        <div class="col-3 ">
+            <h2 class="mb-2">Product-Categories</h2>
+                {% for c_row in clist %}
+                <p class="ml-3"><a href="/user/showsubcategory/?catnm={{c_row.catnm}}" class="text-dark">{{c_row.catnm}}</a></p>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

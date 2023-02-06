@@ -1,0 +1,50 @@
+{% extends 'userhome.html' %}
+{% load static %}
+{% block jumbotron %}
+{% endblock %}
+{% block card %}
+
+    <style>
+        .cborder{
+            border: 2px solid black;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+    </style>
+
+    <h1 class="text-center">Products >> {{catnm}} >> {{subcatnm}}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-9 ">
+                <div class="container">
+                    {% for row in plist %}
+                <div class="row cborder p-2 mb-4">
+                    <div class="col-3">
+                        <img src="{{MEDIA_URL}}{{row.piconnm}}" alt="" width="200" height="150">
+                    </div>
+                    <div class="col-9 pl-5 ">
+                        <h4 >{{row.ptitle}} </h4>
+                        <h5>{{row.pdescription}}</h5>
+                        <h5>&#8377;{{row.pprice}}</h5>
+                        <form method="post" action="/user/order/">
+                            {% csrf_token %}
+                            <input type="hidden" name="pid" value="{{row.pid}}" id="">
+                            <input type="hidden" name="pprice" value="{{row.pprice}}" id="">
+                            <label for="">Product Quantity</label>
+                            <input type="text" name="qty" class=""><br>
+                            <input type="submit" value="Place-order">
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            </div>
+            <div class="col-3 ">
+                <h4>Sub-Categories</h4>
+                {% for row in sclist %}
+                <p class="ml-3"><a href="/user/showsubcategory/?catnm={{row.subcatnm}}" class="text-dark">{{row.subcatnm}}</a></p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

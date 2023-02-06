@@ -1,0 +1,18 @@
+{% extends 'userhome.html' %}
+{% load static %}
+{% block jumbotron %}
+<h1 class="ml-5">Category >></h1>
+<div class="container text-center justify-content-center mt-5 padding">
+    <div class="row">
+        {% for row in clist %}
+    <div class="col-lg-3 col-md-4  justify-content-center">
+            <a href="/user/showsubcategory/?catnm={{row.catnm}}">
+            <img src='{{MEDIA_URL}}{{row.caticonnm}}' alt="" width="200" height="150" class='bg-danger'><br>
+            <b class="text-dark">{{row.catnm}}</b>
+        </a>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
